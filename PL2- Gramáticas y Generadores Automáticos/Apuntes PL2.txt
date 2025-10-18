@@ -1,0 +1,94 @@
+el objetivo es 
+
+esta práctica ya se va pareciendo a un compilador real
+
+con antlr ser capaces de:
+- análisis léxico
+- análisis sintáctico
+	- esto genera un árbol. puede ser que nosotros queramos generar una forma concreta (separar una cosa de otra, etc.).
+
+si hay alguna parte que no realizamos, poner por qué no la hemos podido/sabido hecho. explicarlo:
+- no he tenido tiempo para hacerla.
+- puede que hayamos tenido problemas (ej. no hemos sido capaces de escribir las reglas para reconocer una estructura)
+- en la parte que tenemos más libertad, es posible que hagamos cosas que hagan que luego otras cosas que sean irresolubles.
+
+
+el enunciado tiene 2 grandes partes:
+
+PARTE 1:
+
+1.1. se nos dan lenguajes y hay que generar árboles. (generar árboles sintácticos para lenguajes específicos)
+	- generar un analizador léxico y sintáctico que nos permita construir el csv para determinados delimitadores/separadores
+		- nivel básico: lexer y parser (probablemente tenga pocas reglas). no tenemos en cuenta el significado, solo en estructura. se pueden hacer juntos pero lo lógico es separarlos. antlr nos genera el árbol léxico y sintáctico. indicar en la memoria cuál es el lexer y cuál es el parser. poner en la memoria una captura del árbol que genera antlr.
+		- nivel medio: lo de texto plano es poner, por ejemplo:
+
+líneas
+	linea
+		elem
+		elem
+		elem
+	linea
+		elem
+…
+hacer esto con el listener. esto es una herramienta que nos permite visitar todo el árbol, por lo que podemos escribir en el nodo que queramos el elemento que queramos.
+es decir, recorrer el árbol para extraer la información que queramos. lo de los "elementos indispensables" sería algo rollo lo de arriba,
+
+
+1.2. lenguaje de programación mínimo.
+importante decir que hacemos lo que se pide. es decir, si pone que hay que hacer "asignaciones iniciales", poner en la memoria que estamos haciendo "asignaciones".
+	- nivel medio: (hasta un máximo de 4 mejoras) es decir:
+		- añadir multiplicaciones y divisiones (cuenta como solo 1).
+		- añadir un tipo.
+		- añadir una estructura (while, for, etc.)
+	- evidentemente, si añadimos estas reglas, las tenemos que reconocer (las añadimos en el lexer y el parser).
+
+
+PARTE 2:
+- solo librerías estanterías (no más muebles).
+- traducir nosotros mismos, según creamos, las imágenes del manual a texto.
+	- tratar de tener el mínimo número de verbos posibles (juntar y unir es uno solo, por ejemplo).
+	- no solo pensar como traduzco esas instrucciones, sino reducirlas a unas (en el enunciado, esto es lo de "reducir las reglas lingüísticas a un conjunto razonable").
+
+es decir, con el lenguaje que definamos y la traducción que hagamos para los manuales (será un proceso iterativo), generar el lexer y el parser correspondiente al lenguaje generado y que pueda reconocer las traducciones. es decir:
+	1- inventarnos un lenguaje.
+	2- utilizar el lenguaje para traducir las instrucciones.
+	3- crear el lexer y el parser para reconocer esos lenguajes.
+
+nivel avanzado: esto es, básicamente, poner en práctica la tabla de símbolos.
+- con las herramientas, (ej.) si uso un destornillador 15 veces, solo necesito 1 destornillador.
+- con los herrajes, (ej.) si uso 15 tornillos, necesito 15 tornillos.
+
+
+CÓMO DESARROLLAR LA PRÁCTICA: (siempre haciendo la memoria en paralelo).
+1. lexer y parser de la parte 1 (nivel básico).
+2. nivel básico de la parte 2.
+3. ponernos con los listeners.
+
+
+Problemas que puedo tener con las instrucciones
+- ojo, no darle un nombre propio a cada pieza (llamarles "pieza")
+	- o podemos hacer cosas como generar palabras para tipos de piezas (pieza larga, pieza corta; caja_lado largo, caja_lado corto, etc.)
+- podemos obviar cosas como: USAR DESTORNILLADOR FINO/GORDO --> USAR DESTORNILLADOR (si no, nos volvemos locos). o podemos obviar cosas como los warnings.
+
+IMPORTANTE, antes de ponernos a traducir, definir una serie de constantes. por ejemplo, definir qué significa "estar de pie", "estar de lado" o girar "abajo", "fondo", colocar "balda" etc. podemos hacer dibujos para mostrar a qué nos referimos.
+
+Ejemplo:
+ITEM:KNAGGLIG_SMALL
+1-Unir pieza fondo y pieza lateral_largo.
+2-Con destornillador, atornillar 2 tornillos 108363.
+3-Girar ABAJO; Colocar pieza lateral_largo.
+4-Con destornillador, atornillar 2 tornillos 108363; Girar LATERAL_CORTO.
+5-Colocar pieza lateral_corto_bajo; Con destornillador, atornillar4 tornillos 108363.
+6-Colocar pieza lateral_corto_alto; Con destornillador, atornillar4 tornillos 108363.
+7-etc.
+8-FIN.
+
+documentar el proceso de pensado de traducción de instrucciones.
+es posible que acabemos con una traducción muy genérica en la que se pierda información, no pasa nada. balance entre información, utilidad y simpleza (un paso no pueden ser 3 líneas).
+
+explicar las decisiones de diseño (del lenguaje creado).
+
+
+
+
+
