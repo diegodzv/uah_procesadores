@@ -1,13 +1,11 @@
-el objetivo es 
-
 esta práctica ya se va pareciendo a un compilador real
 
-con antlr ser capaces de:
+el objetivo es, con antlr, ser capaces de:
 - análisis léxico
 - análisis sintáctico
 	- esto genera un árbol. puede ser que nosotros queramos generar una forma concreta (separar una cosa de otra, etc.).
 
-si hay alguna parte que no realizamos, poner por qué no la hemos podido/sabido hecho. explicarlo:
+si hay alguna parte que no realizamos, poner por qué no la hemos podido/sabido/hecho. explicarlo:
 - no he tenido tiempo para hacerla.
 - puede que hayamos tenido problemas (ej. no hemos sido capaces de escribir las reglas para reconocer una estructura)
 - en la parte que tenemos más libertad, es posible que hagamos cosas que hagan que luego otras cosas que sean irresolubles.
