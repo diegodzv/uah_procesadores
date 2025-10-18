@@ -1,0 +1,36 @@
+24/09/25
+
+objetivos:
+- ser capaces de dividir cualquier entrada en tokens
+- programar un sistema para evaluar si una expresión es correcta o no
+
+el objetivo es:
+Expresión --> Expresión Regular --(autómata)--> Matriz de Esados
+
+1. Qué matriz he utilizado
+2. Dada una cadena de texto de entrada, analizarla 
+
+OJO, QUE EL PROGRAMA NO SE PARE, QUE, AL CONSUMIR UNA CADENA, NOS PIDA OTRA O DE OPCIÓN PARA TERMINAR
+No debemos admitir números.
+Explicar si admitimos mayúsculas, caracteres raros, etc.
+
+Reflejar en la memoria:
+- las ER de los casos a-d
+	c. tenemos cierta libertad a la hora de definir lo que es un float.
+
+solo pasar las 3-4 clases (scripts) con el código
+separar clase main del autómata y de la máquina de estados
+comprobar casos extremos, errores (tests), cadenas vacías, etc (ojo, igual es válidas, como en la del número par de aes).
+entrega:
+- pdf
+- .zip con código
+- vídeo
+
+a) ER para reconocer una variable. estas variables están formadas por letras, números, pueden tener mayúsculas (si quiero). esto sería algo así:
+(a|b|...|z|A|B|...Z)((a|b|...|z|A|B|...Z|0|1|...|9)
+	no tenemos por qué hacerlo así, ponemos
+(a|b|...|z|A|B|...Z)((a|b|...|z|A|B|...Z|0|1|...|9)*
+lo que hacemos es:
+	letra --> …
+	número --> …
+	id --> (letra)(letra|número)*	
