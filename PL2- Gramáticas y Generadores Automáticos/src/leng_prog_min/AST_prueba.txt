@@ -1,0 +1,11 @@
+Programa E (prueba.txt)
+  Asignar: a,b,c = 0
+  Mientras (a<3):
+    mostrara;P
+    asignara=a+1;P
+  FinMientras
+  Si ((a+(b-c))>=2):
+    mostrar"OK";P
+  No:
+    mostrar"FAIL";P
+  Terminar

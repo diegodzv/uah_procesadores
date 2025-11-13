@@ -1,0 +1,16 @@
+# Asignación múltiple
+asignar a,b,c = 0 ;P
+
+# Bucle
+mientras-> a < 3 
+    mostrar a ;P
+    asignar a = a + 1 ;P
+finmientras
+
+# Condicional con paréntesis anidados
+(a + (b - c)) >= 2 ???
+si->
+    mostrar "OK" ;P
+no->
+    mostrar "FAIL" ;P
+terminar
