@@ -1,5 +1,3 @@
 package ast;
 
-public class InstructionNode {
-    
-}
+public abstract class InstructionNode extends AstNode {}

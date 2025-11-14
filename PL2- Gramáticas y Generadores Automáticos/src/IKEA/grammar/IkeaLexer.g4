@@ -1,34 +1,44 @@
 lexer grammar IkeaLexer;
 
-// Palabras clave
-ITEM           : 'ITEM';
-UNIR           : 'UNIR';
-PONER          : 'PONER';
-ATORNILLAR     : 'ATORNILLAR';
-GIRAR          : 'GIRAR';
-REPETIR        : 'REPETIR';
+// Palabras clave (case-insensitive)
+ITEM           : [Ii][Tt][Ee][Mm];
+UNIR           : [Uu][Nn][Ii][Rr];
+PONER          : [Pp][Oo][Nn][Ee][Rr];
+ATORNILLAR     : [Aa][Tt][Oo][Rr][Nn][Ii][Ll][Ll][Aa][Rr];
+GIRAR          : [Gg][Ii][Rr][Aa][Rr];
+REPETIR        : [Rr][Ee][Pp][Ee][Tt][Ii][Rr];
 
-PIEZA          : 'PIEZA';
+PIEZA          : [Pp][Ii][Ee][Zz][Aa];
 
-ESPIGA         : 'ESPIGA';
-TORNILLO       : 'TORNILLO';
-TUERCA         : 'TUERCA';
-HERRAJE        : 'HERRAJE';
+ESPIGA         : [Ee][Ss][Pp][Ii][Gg][Aa];
+TORNILLO       : [Tt][Oo][Rr][Nn][Ii][Ll][Ll][Oo];
+TUERCA         : [Tt][Uu][Ee][Rr][Cc][Aa];
+HERRAJE        : [Hh][Ee][Rr][Rr][Aa][Jj][Ee];
 
-DESTORNILLADOR : 'DESTORNILLADOR';
-MARTILLO       : 'MARTILLO';
+DESTORNILLADOR : [Dd][Ee][Ss][Tt][Oo][Rr][Nn][Ii][Ll][Ll][Aa][Dd][Oo][Rr];
+MARTILLO       : [Mm][Aa][Rr][Tt][Ii][Ll][Ll][Oo];
 
-CON            : 'Con';
-EN             : 'en';
-Y              : 'y';
+ORIENTACION : ARRIBA | ABAJO | LATERAL ;
+
+// Palabras para orientación
+ARRIBA         : [Aa][Rr][Rr][Ii][Bb][Aa];
+ABAJO          : [Aa][Bb][Aa][Jj][Oo];
+LATERAL        : [Ll][Aa][Tt][Ee][Rr][Aa][Ll];
+
+// Conectores
+CON            : [Cc][Oo][Nn];
+EN             : [Ee][Nn];
+Y              : [Yy];
 COMMA          : ',';
 
-// NECESARIO PARA EL PARSER
-COLON          : ':' ;
-DOT            : '.' ;
-SEMI           : ';' ;
+// Símbolos
+COLON          : ':';
+DOT            : '.';
+SEMI           : ';';
 
-IDENT          : [A-Z_][A-Z_0-9]*;
+// Datos
 INT            : [0-9]+;
+IDENT          : [A-Za-z_][A-Za-z_0-9]*;
 
+// Ignorar espacios y saltos
 WS             : [ \t\r\n]+ -> skip;

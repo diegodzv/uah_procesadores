@@ -47,77 +47,15 @@ public interface IkeaParserListener extends ParseTreeListener {
 	 */
 	void exitInstructionList(IkeaParser.InstructionListContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code UnirInstrNode}
-	 * labeled alternative in {@link IkeaParser#instruction}.
+	 * Enter a parse tree produced by {@link IkeaParser#instruction}.
 	 * @param ctx the parse tree
 	 */
-	void enterUnirInstrNode(IkeaParser.UnirInstrNodeContext ctx);
+	void enterInstruction(IkeaParser.InstructionContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code UnirInstrNode}
-	 * labeled alternative in {@link IkeaParser#instruction}.
+	 * Exit a parse tree produced by {@link IkeaParser#instruction}.
 	 * @param ctx the parse tree
 	 */
-	void exitUnirInstrNode(IkeaParser.UnirInstrNodeContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code PonerInstrNode}
-	 * labeled alternative in {@link IkeaParser#instruction}.
-	 * @param ctx the parse tree
-	 */
-	void enterPonerInstrNode(IkeaParser.PonerInstrNodeContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code PonerInstrNode}
-	 * labeled alternative in {@link IkeaParser#instruction}.
-	 * @param ctx the parse tree
-	 */
-	void exitPonerInstrNode(IkeaParser.PonerInstrNodeContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code GirarInstrNode}
-	 * labeled alternative in {@link IkeaParser#instruction}.
-	 * @param ctx the parse tree
-	 */
-	void enterGirarInstrNode(IkeaParser.GirarInstrNodeContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code GirarInstrNode}
-	 * labeled alternative in {@link IkeaParser#instruction}.
-	 * @param ctx the parse tree
-	 */
-	void exitGirarInstrNode(IkeaParser.GirarInstrNodeContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code RepetirInstrNode}
-	 * labeled alternative in {@link IkeaParser#instruction}.
-	 * @param ctx the parse tree
-	 */
-	void enterRepetirInstrNode(IkeaParser.RepetirInstrNodeContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code RepetirInstrNode}
-	 * labeled alternative in {@link IkeaParser#instruction}.
-	 * @param ctx the parse tree
-	 */
-	void exitRepetirInstrNode(IkeaParser.RepetirInstrNodeContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code AtornillarInstrNode}
-	 * labeled alternative in {@link IkeaParser#instruction}.
-	 * @param ctx the parse tree
-	 */
-	void enterAtornillarInstrNode(IkeaParser.AtornillarInstrNodeContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code AtornillarInstrNode}
-	 * labeled alternative in {@link IkeaParser#instruction}.
-	 * @param ctx the parse tree
-	 */
-	void exitAtornillarInstrNode(IkeaParser.AtornillarInstrNodeContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code ConHerramientaAtornillarInstrNode}
-	 * labeled alternative in {@link IkeaParser#instruction}.
-	 * @param ctx the parse tree
-	 */
-	void enterConHerramientaAtornillarInstrNode(IkeaParser.ConHerramientaAtornillarInstrNodeContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code ConHerramientaAtornillarInstrNode}
-	 * labeled alternative in {@link IkeaParser#instruction}.
-	 * @param ctx the parse tree
-	 */
-	void exitConHerramientaAtornillarInstrNode(IkeaParser.ConHerramientaAtornillarInstrNodeContext ctx);
+	void exitInstruction(IkeaParser.InstructionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link IkeaParser#unirInstr}.
 	 * @param ctx the parse tree
@@ -178,6 +116,16 @@ public interface IkeaParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitRepetirInstr(IkeaParser.RepetirInstrContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link IkeaParser#orientacion}.
+	 * @param ctx the parse tree
+	 */
+	void enterOrientacion(IkeaParser.OrientacionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link IkeaParser#orientacion}.
+	 * @param ctx the parse tree
+	 */
+	void exitOrientacion(IkeaParser.OrientacionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link IkeaParser#herramienta}.
 	 * @param ctx the parse tree

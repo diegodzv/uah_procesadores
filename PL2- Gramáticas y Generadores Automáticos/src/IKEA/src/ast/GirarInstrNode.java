@@ -1,5 +1,5 @@
 package ast;
 
-public class GirarInstrNode {
-    
+public class GirarInstrNode extends InstructionNode {
+    public String orientacion;
 }

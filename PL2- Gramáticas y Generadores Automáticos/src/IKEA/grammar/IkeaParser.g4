@@ -21,12 +21,12 @@ instructionList
   ;
 
 instruction
-  : unirInstr                        #UnirInstrNode
-  | ponerInstr                       #PonerInstrNode
-  | girarInstr                       #GirarInstrNode
-  | repetirInstr                     #RepetirInstrNode
-  | atornillarInstr                  #AtornillarInstrNode
-  | conHerramientaAtornillarInstr    #ConHerramientaAtornillarInstrNode
+  : unirInstr
+  | ponerInstr
+  | girarInstr
+  | repetirInstr
+  | atornillarInstr
+  | conHerramientaAtornillarInstr
   ;
 
 unirInstr
@@ -43,16 +43,22 @@ conHerramientaAtornillarInstr
 
 atornillarInstr
   : ATORNILLAR INT TORNILLO INT
-      (EN PIEZA IDENT)?
-      (CON TUERCA INT)?
+    (EN PIEZA IDENT)?
+    (CON TUERCA INT)?
   ;
 
 girarInstr
-  : GIRAR IDENT
+  : GIRAR orientacion
   ;
 
 repetirInstr
   : REPETIR stepLabel
+  ;
+
+orientacion
+  : ARRIBA
+  | ABAJO
+  | LATERAL
   ;
 
 herramienta

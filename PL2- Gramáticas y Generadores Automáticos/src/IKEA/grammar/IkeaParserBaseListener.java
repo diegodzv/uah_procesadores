@@ -64,73 +64,13 @@ public class IkeaParserBaseListener implements IkeaParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterUnirInstrNode(IkeaParser.UnirInstrNodeContext ctx) { }
+	@Override public void enterInstruction(IkeaParser.InstructionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitUnirInstrNode(IkeaParser.UnirInstrNodeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterPonerInstrNode(IkeaParser.PonerInstrNodeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitPonerInstrNode(IkeaParser.PonerInstrNodeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterGirarInstrNode(IkeaParser.GirarInstrNodeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitGirarInstrNode(IkeaParser.GirarInstrNodeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterRepetirInstrNode(IkeaParser.RepetirInstrNodeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitRepetirInstrNode(IkeaParser.RepetirInstrNodeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterAtornillarInstrNode(IkeaParser.AtornillarInstrNodeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitAtornillarInstrNode(IkeaParser.AtornillarInstrNodeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterConHerramientaAtornillarInstrNode(IkeaParser.ConHerramientaAtornillarInstrNodeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitConHerramientaAtornillarInstrNode(IkeaParser.ConHerramientaAtornillarInstrNodeContext ctx) { }
+	@Override public void exitInstruction(IkeaParser.InstructionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -203,6 +143,18 @@ public class IkeaParserBaseListener implements IkeaParserListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitRepetirInstr(IkeaParser.RepetirInstrContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterOrientacion(IkeaParser.OrientacionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOrientacion(IkeaParser.OrientacionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
