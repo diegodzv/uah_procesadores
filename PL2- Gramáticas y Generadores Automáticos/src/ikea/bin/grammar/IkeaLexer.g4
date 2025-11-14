@@ -17,6 +17,7 @@ HERRAJE        : [Hh][Ee][Rr][Rr][Aa][Jj][Ee];
 
 DESTORNILLADOR : [Dd][Ee][Ss][Tt][Oo][Rr][Nn][Ii][Ll][Ll][Aa][Dd][Oo][Rr];
 MARTILLO       : [Mm][Aa][Rr][Tt][Ii][Ll][Ll][Oo];
+MANO           : [Mm][Aa][Nn][Oo];
 
 // Palabras para orientación
 ARRIBA         : [Aa][Rr][Rr][Ii][Bb][Aa];

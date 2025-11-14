@@ -5,4 +5,5 @@ public class PonerInstrNode extends InstructionNode {
     public String tipoHerraje;
     public int idHerraje;
     public String piezaDestino;
+    public String herramienta;
 }

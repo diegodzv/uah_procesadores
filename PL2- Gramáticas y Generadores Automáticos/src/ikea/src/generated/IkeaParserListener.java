@@ -17,6 +17,16 @@ public interface IkeaParserListener extends ParseTreeListener {
 	 */
 	void exitManual(IkeaParser.ManualContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link IkeaParser#itemHeader}.
+	 * @param ctx the parse tree
+	 */
+	void enterItemHeader(IkeaParser.ItemHeaderContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link IkeaParser#itemHeader}.
+	 * @param ctx the parse tree
+	 */
+	void exitItemHeader(IkeaParser.ItemHeaderContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link IkeaParser#step}.
 	 * @param ctx the parse tree
 	 */

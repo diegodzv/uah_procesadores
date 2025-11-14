@@ -5,10 +5,14 @@ options {
 }
 
 // =============================================
-// Entrada principal (SIN ITEM)
+// Entrada principal (CON ITEM opcional)
 // =============================================
 manual
-  : step+ EOF
+  : itemHeader? step+ EOF
+  ;
+
+itemHeader
+  : ITEM COLON IDENT
   ;
 
 // =============================================
@@ -50,7 +54,7 @@ unirInstr
   ;
 
 ponerInstr
-  : PONER INT tipoHerraje INT EN PIEZA IDENT
+  : CON herramienta COMMA PONER INT tipoHerraje INT EN PIEZA IDENT
   ;
 
 conHerramientaAtornillarInstr
@@ -84,6 +88,7 @@ orientacion
 herramienta
   : DESTORNILLADOR
   | MARTILLO
+  | MANO
   ;
 
 tipoHerraje

@@ -28,6 +28,18 @@ public class IkeaParserBaseListener implements IkeaParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterItemHeader(IkeaParser.ItemHeaderContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitItemHeader(IkeaParser.ItemHeaderContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterStep(IkeaParser.StepContext ctx) { }
 	/**
 	 * {@inheritDoc}

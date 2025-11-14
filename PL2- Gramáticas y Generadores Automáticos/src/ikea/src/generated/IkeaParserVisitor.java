@@ -16,6 +16,12 @@ public interface IkeaParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitManual(IkeaParser.ManualContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link IkeaParser#itemHeader}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitItemHeader(IkeaParser.ItemHeaderContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link IkeaParser#step}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

@@ -24,6 +24,6 @@ public class IkeaMain {
 
         System.out.println("AST construido correctamente.");
         System.out.println("ITEM: " + ast.itemName);
-        System.out.println("Número de pasos: " + ast.steps.size());
+        System.out.println("Número de pasos (incluyendo subpasos): " + ast.steps.size());
     }
 }

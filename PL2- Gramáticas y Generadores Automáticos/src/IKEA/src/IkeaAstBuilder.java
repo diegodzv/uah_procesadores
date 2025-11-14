@@ -4,15 +4,21 @@ import ast.*;
 
 public class IkeaAstBuilder extends IkeaParserBaseVisitor<AstNode> {
 
-    @Override
-    public AstNode visitManual(IkeaParser.ManualContext ctx) {
-        ManualNode m = new ManualNode();
+   @Override
+public AstNode visitManual(IkeaParser.ManualContext ctx) {
+    ManualNode m = new ManualNode();
 
-        for (IkeaParser.StepContext s : ctx.step()) {
-            m.steps.add((StepNode) visit(s));
-        }
-        return m;
+    
+    if (ctx.itemHeader() != null) {
+        m.itemName = ctx.itemHeader().IDENT().getText();
     }
+
+    for (IkeaParser.StepContext s : ctx.step()) {
+        m.steps.add((StepNode) visit(s));
+    }
+    return m;
+}
+
 
     @Override
     public AstNode visitStep(IkeaParser.StepContext ctx) {
@@ -37,15 +43,22 @@ public class IkeaAstBuilder extends IkeaParserBaseVisitor<AstNode> {
         return n;
     }
 
-    @Override
-    public AstNode visitPonerInstr(IkeaParser.PonerInstrContext ctx) {
-        PonerInstrNode n = new PonerInstrNode();
-        n.cantidad = Integer.parseInt(ctx.INT(0).getText());
-        n.tipoHerraje = ctx.tipoHerraje().getText();
-        n.idHerraje = Integer.parseInt(ctx.INT(1).getText());
-        n.piezaDestino = ctx.IDENT().getText();
-        return n;
+   @Override
+public AstNode visitPonerInstr(IkeaParser.PonerInstrContext ctx) {
+    PonerInstrNode n = new PonerInstrNode();
+    n.cantidad = Integer.parseInt(ctx.INT(0).getText());
+    n.tipoHerraje = ctx.tipoHerraje().getText();
+    n.idHerraje = Integer.parseInt(ctx.INT(1).getText());
+    n.piezaDestino = ctx.IDENT().getText();
+
+    
+    if (ctx.CON() != null) {
+        n.herramienta = ctx.herramienta().getText(); 
     }
+
+    return n;
+}
+
 
     @Override
     public AstNode visitAtornillarInstr(IkeaParser.AtornillarInstrContext ctx) {
