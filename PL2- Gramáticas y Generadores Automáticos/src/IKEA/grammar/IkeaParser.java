@@ -17,9 +17,9 @@ public class IkeaParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		ITEM=1, UNIR=2, PONER=3, ATORNILLAR=4, GIRAR=5, REPETIR=6, PIEZA=7, ESPIGA=8, 
-		TORNILLO=9, TUERCA=10, HERRAJE=11, DESTORNILLADOR=12, MARTILLO=13, ORIENTACION=14, 
-		ARRIBA=15, ABAJO=16, LATERAL=17, CON=18, EN=19, Y=20, COMMA=21, COLON=22, 
-		DOT=23, SEMI=24, INT=25, IDENT=26, WS=27;
+		TORNILLO=9, TUERCA=10, HERRAJE=11, DESTORNILLADOR=12, MARTILLO=13, ARRIBA=14, 
+		ABAJO=15, LATERAL=16, CON=17, EN=18, Y=19, COMMA=20, COLON=21, DOT=22, 
+		SEMI=23, INT=24, IDENT=25, WS=26;
 	public static final int
 		RULE_manual = 0, RULE_step = 1, RULE_stepLabel = 2, RULE_instructionList = 3, 
 		RULE_instruction = 4, RULE_unirInstr = 5, RULE_ponerInstr = 6, RULE_conHerramientaAtornillarInstr = 7, 
@@ -37,7 +37,7 @@ public class IkeaParser extends Parser {
 	private static String[] makeLiteralNames() {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, null, null, null, null, "','", "':'", "'.'", 
+			null, null, null, null, null, null, null, null, "','", "':'", "'.'", 
 			"';'"
 		};
 	}
@@ -46,8 +46,8 @@ public class IkeaParser extends Parser {
 		return new String[] {
 			null, "ITEM", "UNIR", "PONER", "ATORNILLAR", "GIRAR", "REPETIR", "PIEZA", 
 			"ESPIGA", "TORNILLO", "TUERCA", "HERRAJE", "DESTORNILLADOR", "MARTILLO", 
-			"ORIENTACION", "ARRIBA", "ABAJO", "LATERAL", "CON", "EN", "Y", "COMMA", 
-			"COLON", "DOT", "SEMI", "INT", "IDENT", "WS"
+			"ARRIBA", "ABAJO", "LATERAL", "CON", "EN", "Y", "COMMA", "COLON", "DOT", 
+			"SEMI", "INT", "IDENT", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -868,7 +868,7 @@ public class IkeaParser extends Parser {
 			{
 			setState(106);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 229376L) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 114688L) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -997,7 +997,7 @@ public class IkeaParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u001bq\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
+		"\u0004\u0001\u001aq\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
 		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004\u0002"+
 		"\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0002\u0007\u0007\u0007\u0002"+
 		"\b\u0007\b\u0002\t\u0007\t\u0002\n\u0007\n\u0002\u000b\u0007\u000b\u0002"+
@@ -1015,23 +1015,23 @@ public class IkeaParser extends Parser {
 		"\bc\b\b\u0001\t\u0001\t\u0001\t\u0001\n\u0001\n\u0001\n\u0001\u000b\u0001"+
 		"\u000b\u0001\f\u0001\f\u0001\r\u0001\r\u0001\r\u0000\u0000\u000e\u0000"+
 		"\u0002\u0004\u0006\b\n\f\u000e\u0010\u0012\u0014\u0016\u0018\u001a\u0000"+
-		"\u0003\u0001\u0000\u000f\u0011\u0001\u0000\f\r\u0002\u0000\b\b\n\u000b"+
+		"\u0003\u0001\u0000\u000e\u0010\u0001\u0000\f\r\u0002\u0000\b\b\n\u000b"+
 		"l\u0000\u001c\u0001\u0000\u0000\u0000\u0002&\u0001\u0000\u0000\u0000\u0004"+
 		"*\u0001\u0000\u0000\u0000\u00062\u0001\u0000\u0000\u0000\b@\u0001\u0000"+
 		"\u0000\u0000\nB\u0001\u0000\u0000\u0000\fI\u0001\u0000\u0000\u0000\u000e"+
 		"Q\u0001\u0000\u0000\u0000\u0010V\u0001\u0000\u0000\u0000\u0012d\u0001"+
 		"\u0000\u0000\u0000\u0014g\u0001\u0000\u0000\u0000\u0016j\u0001\u0000\u0000"+
 		"\u0000\u0018l\u0001\u0000\u0000\u0000\u001an\u0001\u0000\u0000\u0000\u001c"+
-		"\u001d\u0005\u0001\u0000\u0000\u001d\u001e\u0005\u0016\u0000\u0000\u001e"+
-		" \u0005\u001a\u0000\u0000\u001f!\u0003\u0002\u0001\u0000 \u001f\u0001"+
+		"\u001d\u0005\u0001\u0000\u0000\u001d\u001e\u0005\u0015\u0000\u0000\u001e"+
+		" \u0005\u0019\u0000\u0000\u001f!\u0003\u0002\u0001\u0000 \u001f\u0001"+
 		"\u0000\u0000\u0000!\"\u0001\u0000\u0000\u0000\" \u0001\u0000\u0000\u0000"+
 		"\"#\u0001\u0000\u0000\u0000#$\u0001\u0000\u0000\u0000$%\u0005\u0000\u0000"+
 		"\u0001%\u0001\u0001\u0000\u0000\u0000&\'\u0003\u0004\u0002\u0000\'(\u0005"+
-		"\u0017\u0000\u0000()\u0003\u0006\u0003\u0000)\u0003\u0001\u0000\u0000"+
-		"\u0000*/\u0005\u0019\u0000\u0000+,\u0005\u0017\u0000\u0000,.\u0005\u0019"+
+		"\u0016\u0000\u0000()\u0003\u0006\u0003\u0000)\u0003\u0001\u0000\u0000"+
+		"\u0000*/\u0005\u0018\u0000\u0000+,\u0005\u0016\u0000\u0000,.\u0005\u0018"+
 		"\u0000\u0000-+\u0001\u0000\u0000\u0000.1\u0001\u0000\u0000\u0000/-\u0001"+
 		"\u0000\u0000\u0000/0\u0001\u0000\u0000\u00000\u0005\u0001\u0000\u0000"+
-		"\u00001/\u0001\u0000\u0000\u000027\u0003\b\u0004\u000034\u0005\u0018\u0000"+
+		"\u00001/\u0001\u0000\u0000\u000027\u0003\b\u0004\u000034\u0005\u0017\u0000"+
 		"\u000046\u0003\b\u0004\u000053\u0001\u0000\u0000\u000069\u0001\u0000\u0000"+
 		"\u000075\u0001\u0000\u0000\u000078\u0001\u0000\u0000\u00008\u0007\u0001"+
 		"\u0000\u0000\u000097\u0001\u0000\u0000\u0000:A\u0003\n\u0005\u0000;A\u0003"+
@@ -1039,18 +1039,18 @@ public class IkeaParser extends Parser {
 		"\b\u0000?A\u0003\u000e\u0007\u0000@:\u0001\u0000\u0000\u0000@;\u0001\u0000"+
 		"\u0000\u0000@<\u0001\u0000\u0000\u0000@=\u0001\u0000\u0000\u0000@>\u0001"+
 		"\u0000\u0000\u0000@?\u0001\u0000\u0000\u0000A\t\u0001\u0000\u0000\u0000"+
-		"BC\u0005\u0002\u0000\u0000CD\u0005\u0007\u0000\u0000DE\u0005\u001a\u0000"+
-		"\u0000EF\u0005\u0014\u0000\u0000FG\u0005\u0007\u0000\u0000GH\u0005\u001a"+
+		"BC\u0005\u0002\u0000\u0000CD\u0005\u0007\u0000\u0000DE\u0005\u0019\u0000"+
+		"\u0000EF\u0005\u0013\u0000\u0000FG\u0005\u0007\u0000\u0000GH\u0005\u0019"+
 		"\u0000\u0000H\u000b\u0001\u0000\u0000\u0000IJ\u0005\u0003\u0000\u0000"+
-		"JK\u0005\u0019\u0000\u0000KL\u0003\u001a\r\u0000LM\u0005\u0019\u0000\u0000"+
-		"MN\u0005\u0013\u0000\u0000NO\u0005\u0007\u0000\u0000OP\u0005\u001a\u0000"+
-		"\u0000P\r\u0001\u0000\u0000\u0000QR\u0005\u0012\u0000\u0000RS\u0003\u0018"+
-		"\f\u0000ST\u0005\u0015\u0000\u0000TU\u0003\u0010\b\u0000U\u000f\u0001"+
-		"\u0000\u0000\u0000VW\u0005\u0004\u0000\u0000WX\u0005\u0019\u0000\u0000"+
-		"XY\u0005\t\u0000\u0000Y]\u0005\u0019\u0000\u0000Z[\u0005\u0013\u0000\u0000"+
-		"[\\\u0005\u0007\u0000\u0000\\^\u0005\u001a\u0000\u0000]Z\u0001\u0000\u0000"+
-		"\u0000]^\u0001\u0000\u0000\u0000^b\u0001\u0000\u0000\u0000_`\u0005\u0012"+
-		"\u0000\u0000`a\u0005\n\u0000\u0000ac\u0005\u0019\u0000\u0000b_\u0001\u0000"+
+		"JK\u0005\u0018\u0000\u0000KL\u0003\u001a\r\u0000LM\u0005\u0018\u0000\u0000"+
+		"MN\u0005\u0012\u0000\u0000NO\u0005\u0007\u0000\u0000OP\u0005\u0019\u0000"+
+		"\u0000P\r\u0001\u0000\u0000\u0000QR\u0005\u0011\u0000\u0000RS\u0003\u0018"+
+		"\f\u0000ST\u0005\u0014\u0000\u0000TU\u0003\u0010\b\u0000U\u000f\u0001"+
+		"\u0000\u0000\u0000VW\u0005\u0004\u0000\u0000WX\u0005\u0018\u0000\u0000"+
+		"XY\u0005\t\u0000\u0000Y]\u0005\u0018\u0000\u0000Z[\u0005\u0012\u0000\u0000"+
+		"[\\\u0005\u0007\u0000\u0000\\^\u0005\u0019\u0000\u0000]Z\u0001\u0000\u0000"+
+		"\u0000]^\u0001\u0000\u0000\u0000^b\u0001\u0000\u0000\u0000_`\u0005\u0011"+
+		"\u0000\u0000`a\u0005\n\u0000\u0000ac\u0005\u0018\u0000\u0000b_\u0001\u0000"+
 		"\u0000\u0000bc\u0001\u0000\u0000\u0000c\u0011\u0001\u0000\u0000\u0000"+
 		"de\u0005\u0005\u0000\u0000ef\u0003\u0016\u000b\u0000f\u0013\u0001\u0000"+
 		"\u0000\u0000gh\u0005\u0006\u0000\u0000hi\u0003\u0004\u0002\u0000i\u0015"+
