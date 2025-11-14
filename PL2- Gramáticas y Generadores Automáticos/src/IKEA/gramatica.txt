@@ -1,0 +1,27 @@
+================================ VERBOS ======================================
+- UNIR <PIEZA <tipo>> y <PIEZA <tipo>>
+- PONER <<cantidad> HERRAJES <id>> en <PIEZA <tipo>>
+- ATORNILLAR <cantidad> TORNILLO <id>
+      (en PIEZA <tipo>)?
+      (con TUERCA <id>)?
+- GIRAR <ORIENTACION>
+- REPETIR <paso>
+
+================================ HERRAMIENTAS ================================
+- DESTORNILLADOR
+- MARTILLO
+
+================================ HERRAJES ================================
+- TUERCA <id>
+- ESPIGA <id>
+- HERRAJE <id>
+
+================================ PIEZAS ======================================
+- base
+- superior
+- lateral
+
+================================ ORIENTACION =================================
+- ABAJO
+- ARRIBA
+- LATERAL
