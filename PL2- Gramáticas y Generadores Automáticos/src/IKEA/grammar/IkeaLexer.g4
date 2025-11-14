@@ -38,5 +38,5 @@ SEMI           : ';';
 INT            : [0-9]+;
 IDENT          : [A-Za-z_][A-Za-z_0-9]*;
 
-// Ignorar espacios y saltos
+// Ignorar espacios
 WS             : [ \t\r\n]+ -> skip;

@@ -4,10 +4,16 @@ options {
     tokenVocab = IkeaLexer;
 }
 
+// =============================================
+// Entrada principal (SIN ITEM)
+// =============================================
 manual
-  : ITEM COLON IDENT step+ EOF
+  : step+ EOF
   ;
 
+// =============================================
+// Pasos y subpasos
+// =============================================
 step
   : stepLabel DOT instructionList
   ;
@@ -16,10 +22,16 @@ stepLabel
   : INT (DOT INT)*
   ;
 
+// =============================================
+// Lista de instrucciones
+// =============================================
 instructionList
   : instruction (SEMI instruction)*
   ;
 
+// =============================================
+// Tipos de instrucciones
+// =============================================
 instruction
   : unirInstr
   | ponerInstr
@@ -28,6 +40,10 @@ instruction
   | atornillarInstr
   | conHerramientaAtornillarInstr
   ;
+
+// =============================================
+// Instrucciones individuales
+// =============================================
 
 unirInstr
   : UNIR PIEZA IDENT Y PIEZA IDENT
@@ -54,6 +70,10 @@ girarInstr
 repetirInstr
   : REPETIR stepLabel
   ;
+
+// =============================================
+// Subreglas
+// =============================================
 
 orientacion
   : ARRIBA
