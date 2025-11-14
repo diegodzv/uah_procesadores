@@ -76,6 +76,12 @@ public interface IkeaParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitRepetirInstr(IkeaParser.RepetirInstrContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link IkeaParser#orientacion}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOrientacion(IkeaParser.OrientacionContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link IkeaParser#herramienta}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

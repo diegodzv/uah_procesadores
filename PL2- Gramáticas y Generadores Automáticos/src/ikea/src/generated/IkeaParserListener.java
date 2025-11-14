@@ -117,6 +117,16 @@ public interface IkeaParserListener extends ParseTreeListener {
 	 */
 	void exitRepetirInstr(IkeaParser.RepetirInstrContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link IkeaParser#orientacion}.
+	 * @param ctx the parse tree
+	 */
+	void enterOrientacion(IkeaParser.OrientacionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link IkeaParser#orientacion}.
+	 * @param ctx the parse tree
+	 */
+	void exitOrientacion(IkeaParser.OrientacionContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link IkeaParser#herramienta}.
 	 * @param ctx the parse tree
 	 */

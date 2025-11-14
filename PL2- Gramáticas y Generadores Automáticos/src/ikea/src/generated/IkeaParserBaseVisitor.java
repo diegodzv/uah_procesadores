@@ -94,6 +94,13 @@ public class IkeaParserBaseVisitor<T> extends AbstractParseTreeVisitor<T> implem
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitOrientacion(IkeaParser.OrientacionContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitHerramienta(IkeaParser.HerramientaContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}

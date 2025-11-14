@@ -17,27 +17,28 @@ public class IkeaParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		ITEM=1, UNIR=2, PONER=3, ATORNILLAR=4, GIRAR=5, REPETIR=6, PIEZA=7, ESPIGA=8, 
-		TORNILLO=9, TUERCA=10, HERRAJE=11, DESTORNILLADOR=12, MARTILLO=13, CON=14, 
-		EN=15, Y=16, COMMA=17, COLON=18, DOT=19, SEMI=20, IDENT=21, INT=22, WS=23;
+		TORNILLO=9, TUERCA=10, HERRAJE=11, DESTORNILLADOR=12, MARTILLO=13, ARRIBA=14, 
+		ABAJO=15, LATERAL=16, CON=17, EN=18, Y=19, COMMA=20, COLON=21, DOT=22, 
+		SEMI=23, INT=24, IDENT=25, WS=26;
 	public static final int
 		RULE_manual = 0, RULE_step = 1, RULE_stepLabel = 2, RULE_instructionList = 3, 
 		RULE_instruction = 4, RULE_unirInstr = 5, RULE_ponerInstr = 6, RULE_conHerramientaAtornillarInstr = 7, 
 		RULE_atornillarInstr = 8, RULE_girarInstr = 9, RULE_repetirInstr = 10, 
-		RULE_herramienta = 11, RULE_tipoHerraje = 12;
+		RULE_orientacion = 11, RULE_herramienta = 12, RULE_tipoHerraje = 13;
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"manual", "step", "stepLabel", "instructionList", "instruction", "unirInstr", 
 			"ponerInstr", "conHerramientaAtornillarInstr", "atornillarInstr", "girarInstr", 
-			"repetirInstr", "herramienta", "tipoHerraje"
+			"repetirInstr", "orientacion", "herramienta", "tipoHerraje"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'ITEM'", "'UNIR'", "'PONER'", "'ATORNILLAR'", "'GIRAR'", "'REPETIR'", 
-			"'PIEZA'", "'ESPIGA'", "'TORNILLO'", "'TUERCA'", "'HERRAJE'", "'DESTORNILLADOR'", 
-			"'MARTILLO'", "'Con'", "'en'", "'y'", "','", "':'", "'.'", "';'"
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, "','", "':'", "'.'", 
+			"';'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
@@ -45,7 +46,8 @@ public class IkeaParser extends Parser {
 		return new String[] {
 			null, "ITEM", "UNIR", "PONER", "ATORNILLAR", "GIRAR", "REPETIR", "PIEZA", 
 			"ESPIGA", "TORNILLO", "TUERCA", "HERRAJE", "DESTORNILLADOR", "MARTILLO", 
-			"CON", "EN", "Y", "COMMA", "COLON", "DOT", "SEMI", "IDENT", "INT", "WS"
+			"ARRIBA", "ABAJO", "LATERAL", "CON", "EN", "Y", "COMMA", "COLON", "DOT", 
+			"SEMI", "INT", "IDENT", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -101,9 +103,6 @@ public class IkeaParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ManualContext extends ParserRuleContext {
-		public TerminalNode ITEM() { return getToken(IkeaParser.ITEM, 0); }
-		public TerminalNode COLON() { return getToken(IkeaParser.COLON, 0); }
-		public TerminalNode IDENT() { return getToken(IkeaParser.IDENT, 0); }
 		public TerminalNode EOF() { return getToken(IkeaParser.EOF, 0); }
 		public List<StepContext> step() {
 			return getRuleContexts(StepContext.class);
@@ -137,27 +136,21 @@ public class IkeaParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(26);
-			match(ITEM);
-			setState(27);
-			match(COLON);
-			setState(28);
-			match(IDENT);
-			setState(30); 
+			setState(29); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(29);
+				setState(28);
 				step();
 				}
 				}
-				setState(32); 
+				setState(31); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( _la==INT );
-			setState(34);
+			setState(33);
 			match(EOF);
 			}
 		}
@@ -206,11 +199,11 @@ public class IkeaParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(36);
+			setState(35);
 			stepLabel();
-			setState(37);
+			setState(36);
 			match(DOT);
-			setState(38);
+			setState(37);
 			instructionList();
 			}
 		}
@@ -261,23 +254,23 @@ public class IkeaParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(40);
+			setState(39);
 			match(INT);
-			setState(45);
+			setState(44);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(41);
+					setState(40);
 					match(DOT);
-					setState(42);
+					setState(41);
 					match(INT);
 					}
 					} 
 				}
-				setState(47);
+				setState(46);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
 			}
@@ -332,21 +325,21 @@ public class IkeaParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(48);
+			setState(47);
 			instruction();
-			setState(53);
+			setState(52);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==SEMI) {
 				{
 				{
-				setState(49);
+				setState(48);
 				match(SEMI);
-				setState(50);
+				setState(49);
 				instruction();
 				}
 				}
-				setState(55);
+				setState(54);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -406,48 +399,48 @@ public class IkeaParser extends Parser {
 		InstructionContext _localctx = new InstructionContext(_ctx, getState());
 		enterRule(_localctx, 8, RULE_instruction);
 		try {
-			setState(62);
+			setState(61);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case UNIR:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(56);
+				setState(55);
 				unirInstr();
 				}
 				break;
 			case PONER:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(57);
+				setState(56);
 				ponerInstr();
 				}
 				break;
 			case GIRAR:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(58);
+				setState(57);
 				girarInstr();
 				}
 				break;
 			case REPETIR:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(59);
+				setState(58);
 				repetirInstr();
 				}
 				break;
 			case ATORNILLAR:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(60);
+				setState(59);
 				atornillarInstr();
 				}
 				break;
 			case CON:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(61);
+				setState(60);
 				conHerramientaAtornillarInstr();
 				}
 				break;
@@ -503,17 +496,17 @@ public class IkeaParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(64);
+			setState(63);
 			match(UNIR);
+			setState(64);
+			match(PIEZA);
 			setState(65);
-			match(PIEZA);
-			setState(66);
 			match(IDENT);
-			setState(67);
+			setState(66);
 			match(Y);
-			setState(68);
+			setState(67);
 			match(PIEZA);
-			setState(69);
+			setState(68);
 			match(IDENT);
 			}
 		}
@@ -566,19 +559,19 @@ public class IkeaParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(71);
+			setState(70);
 			match(PONER);
+			setState(71);
+			match(INT);
 			setState(72);
-			match(INT);
-			setState(73);
 			tipoHerraje();
-			setState(74);
+			setState(73);
 			match(INT);
-			setState(75);
+			setState(74);
 			match(EN);
-			setState(76);
+			setState(75);
 			match(PIEZA);
-			setState(77);
+			setState(76);
 			match(IDENT);
 			}
 		}
@@ -628,13 +621,13 @@ public class IkeaParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(79);
+			setState(78);
 			match(CON);
-			setState(80);
+			setState(79);
 			herramienta();
-			setState(81);
+			setState(80);
 			match(COMMA);
-			setState(82);
+			setState(81);
 			atornillarInstr();
 			}
 		}
@@ -688,38 +681,38 @@ public class IkeaParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(84);
+			setState(83);
 			match(ATORNILLAR);
+			setState(84);
+			match(INT);
 			setState(85);
-			match(INT);
-			setState(86);
 			match(TORNILLO);
-			setState(87);
+			setState(86);
 			match(INT);
-			setState(91);
+			setState(90);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==EN) {
 				{
-				setState(88);
+				setState(87);
 				match(EN);
-				setState(89);
+				setState(88);
 				match(PIEZA);
-				setState(90);
+				setState(89);
 				match(IDENT);
 				}
 			}
 
-			setState(96);
+			setState(95);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==CON) {
 				{
-				setState(93);
+				setState(92);
 				match(CON);
-				setState(94);
+				setState(93);
 				match(TUERCA);
-				setState(95);
+				setState(94);
 				match(INT);
 				}
 			}
@@ -740,7 +733,9 @@ public class IkeaParser extends Parser {
 	@SuppressWarnings("CheckReturnValue")
 	public static class GirarInstrContext extends ParserRuleContext {
 		public TerminalNode GIRAR() { return getToken(IkeaParser.GIRAR, 0); }
-		public TerminalNode IDENT() { return getToken(IkeaParser.IDENT, 0); }
+		public OrientacionContext orientacion() {
+			return getRuleContext(OrientacionContext.class,0);
+		}
 		public GirarInstrContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -766,10 +761,10 @@ public class IkeaParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(98);
+			setState(97);
 			match(GIRAR);
-			setState(99);
-			match(IDENT);
+			setState(98);
+			orientacion();
 			}
 		}
 		catch (RecognitionException re) {
@@ -814,10 +809,64 @@ public class IkeaParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(101);
+			setState(100);
 			match(REPETIR);
-			setState(102);
+			setState(101);
 			stepLabel();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class OrientacionContext extends ParserRuleContext {
+		public TerminalNode ARRIBA() { return getToken(IkeaParser.ARRIBA, 0); }
+		public TerminalNode ABAJO() { return getToken(IkeaParser.ABAJO, 0); }
+		public TerminalNode LATERAL() { return getToken(IkeaParser.LATERAL, 0); }
+		public OrientacionContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_orientacion; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof IkeaParserListener ) ((IkeaParserListener)listener).enterOrientacion(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof IkeaParserListener ) ((IkeaParserListener)listener).exitOrientacion(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof IkeaParserVisitor ) return ((IkeaParserVisitor<? extends T>)visitor).visitOrientacion(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final OrientacionContext orientacion() throws RecognitionException {
+		OrientacionContext _localctx = new OrientacionContext(_ctx, getState());
+		enterRule(_localctx, 22, RULE_orientacion);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(103);
+			_la = _input.LA(1);
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 114688L) != 0)) ) {
+			_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -856,12 +905,12 @@ public class IkeaParser extends Parser {
 
 	public final HerramientaContext herramienta() throws RecognitionException {
 		HerramientaContext _localctx = new HerramientaContext(_ctx, getState());
-		enterRule(_localctx, 22, RULE_herramienta);
+		enterRule(_localctx, 24, RULE_herramienta);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(104);
+			setState(105);
 			_la = _input.LA(1);
 			if ( !(_la==DESTORNILLADOR || _la==MARTILLO) ) {
 			_errHandler.recoverInline(this);
@@ -910,12 +959,12 @@ public class IkeaParser extends Parser {
 
 	public final TipoHerrajeContext tipoHerraje() throws RecognitionException {
 		TipoHerrajeContext _localctx = new TipoHerrajeContext(_ctx, getState());
-		enterRule(_localctx, 24, RULE_tipoHerraje);
+		enterRule(_localctx, 26, RULE_tipoHerraje);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(106);
+			setState(107);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 3328L) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -939,65 +988,65 @@ public class IkeaParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0017m\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
+		"\u0004\u0001\u001an\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
 		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004\u0002"+
 		"\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0002\u0007\u0007\u0007\u0002"+
 		"\b\u0007\b\u0002\t\u0007\t\u0002\n\u0007\n\u0002\u000b\u0007\u000b\u0002"+
-		"\f\u0007\f\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0004\u0000"+
-		"\u001f\b\u0000\u000b\u0000\f\u0000 \u0001\u0000\u0001\u0000\u0001\u0001"+
-		"\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0002\u0001\u0002\u0001\u0002"+
-		"\u0005\u0002,\b\u0002\n\u0002\f\u0002/\t\u0002\u0001\u0003\u0001\u0003"+
-		"\u0001\u0003\u0005\u00034\b\u0003\n\u0003\f\u00037\t\u0003\u0001\u0004"+
-		"\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0003\u0004"+
-		"?\b\u0004\u0001\u0005\u0001\u0005\u0001\u0005\u0001\u0005\u0001\u0005"+
-		"\u0001\u0005\u0001\u0005\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0006"+
-		"\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0007\u0001\u0007"+
-		"\u0001\u0007\u0001\u0007\u0001\u0007\u0001\b\u0001\b\u0001\b\u0001\b\u0001"+
-		"\b\u0001\b\u0001\b\u0003\b\\\b\b\u0001\b\u0001\b\u0001\b\u0003\ba\b\b"+
-		"\u0001\t\u0001\t\u0001\t\u0001\n\u0001\n\u0001\n\u0001\u000b\u0001\u000b"+
-		"\u0001\f\u0001\f\u0001\f\u0000\u0000\r\u0000\u0002\u0004\u0006\b\n\f\u000e"+
-		"\u0010\u0012\u0014\u0016\u0018\u0000\u0002\u0001\u0000\f\r\u0002\u0000"+
-		"\b\b\n\u000bi\u0000\u001a\u0001\u0000\u0000\u0000\u0002$\u0001\u0000\u0000"+
-		"\u0000\u0004(\u0001\u0000\u0000\u0000\u00060\u0001\u0000\u0000\u0000\b"+
-		">\u0001\u0000\u0000\u0000\n@\u0001\u0000\u0000\u0000\fG\u0001\u0000\u0000"+
-		"\u0000\u000eO\u0001\u0000\u0000\u0000\u0010T\u0001\u0000\u0000\u0000\u0012"+
-		"b\u0001\u0000\u0000\u0000\u0014e\u0001\u0000\u0000\u0000\u0016h\u0001"+
-		"\u0000\u0000\u0000\u0018j\u0001\u0000\u0000\u0000\u001a\u001b\u0005\u0001"+
-		"\u0000\u0000\u001b\u001c\u0005\u0012\u0000\u0000\u001c\u001e\u0005\u0015"+
-		"\u0000\u0000\u001d\u001f\u0003\u0002\u0001\u0000\u001e\u001d\u0001\u0000"+
-		"\u0000\u0000\u001f \u0001\u0000\u0000\u0000 \u001e\u0001\u0000\u0000\u0000"+
-		" !\u0001\u0000\u0000\u0000!\"\u0001\u0000\u0000\u0000\"#\u0005\u0000\u0000"+
-		"\u0001#\u0001\u0001\u0000\u0000\u0000$%\u0003\u0004\u0002\u0000%&\u0005"+
-		"\u0013\u0000\u0000&\'\u0003\u0006\u0003\u0000\'\u0003\u0001\u0000\u0000"+
-		"\u0000(-\u0005\u0016\u0000\u0000)*\u0005\u0013\u0000\u0000*,\u0005\u0016"+
-		"\u0000\u0000+)\u0001\u0000\u0000\u0000,/\u0001\u0000\u0000\u0000-+\u0001"+
-		"\u0000\u0000\u0000-.\u0001\u0000\u0000\u0000.\u0005\u0001\u0000\u0000"+
-		"\u0000/-\u0001\u0000\u0000\u000005\u0003\b\u0004\u000012\u0005\u0014\u0000"+
-		"\u000024\u0003\b\u0004\u000031\u0001\u0000\u0000\u000047\u0001\u0000\u0000"+
-		"\u000053\u0001\u0000\u0000\u000056\u0001\u0000\u0000\u00006\u0007\u0001"+
-		"\u0000\u0000\u000075\u0001\u0000\u0000\u00008?\u0003\n\u0005\u00009?\u0003"+
-		"\f\u0006\u0000:?\u0003\u0012\t\u0000;?\u0003\u0014\n\u0000<?\u0003\u0010"+
-		"\b\u0000=?\u0003\u000e\u0007\u0000>8\u0001\u0000\u0000\u0000>9\u0001\u0000"+
-		"\u0000\u0000>:\u0001\u0000\u0000\u0000>;\u0001\u0000\u0000\u0000><\u0001"+
-		"\u0000\u0000\u0000>=\u0001\u0000\u0000\u0000?\t\u0001\u0000\u0000\u0000"+
-		"@A\u0005\u0002\u0000\u0000AB\u0005\u0007\u0000\u0000BC\u0005\u0015\u0000"+
-		"\u0000CD\u0005\u0010\u0000\u0000DE\u0005\u0007\u0000\u0000EF\u0005\u0015"+
-		"\u0000\u0000F\u000b\u0001\u0000\u0000\u0000GH\u0005\u0003\u0000\u0000"+
-		"HI\u0005\u0016\u0000\u0000IJ\u0003\u0018\f\u0000JK\u0005\u0016\u0000\u0000"+
-		"KL\u0005\u000f\u0000\u0000LM\u0005\u0007\u0000\u0000MN\u0005\u0015\u0000"+
-		"\u0000N\r\u0001\u0000\u0000\u0000OP\u0005\u000e\u0000\u0000PQ\u0003\u0016"+
-		"\u000b\u0000QR\u0005\u0011\u0000\u0000RS\u0003\u0010\b\u0000S\u000f\u0001"+
-		"\u0000\u0000\u0000TU\u0005\u0004\u0000\u0000UV\u0005\u0016\u0000\u0000"+
-		"VW\u0005\t\u0000\u0000W[\u0005\u0016\u0000\u0000XY\u0005\u000f\u0000\u0000"+
-		"YZ\u0005\u0007\u0000\u0000Z\\\u0005\u0015\u0000\u0000[X\u0001\u0000\u0000"+
-		"\u0000[\\\u0001\u0000\u0000\u0000\\`\u0001\u0000\u0000\u0000]^\u0005\u000e"+
-		"\u0000\u0000^_\u0005\n\u0000\u0000_a\u0005\u0016\u0000\u0000`]\u0001\u0000"+
-		"\u0000\u0000`a\u0001\u0000\u0000\u0000a\u0011\u0001\u0000\u0000\u0000"+
-		"bc\u0005\u0005\u0000\u0000cd\u0005\u0015\u0000\u0000d\u0013\u0001\u0000"+
-		"\u0000\u0000ef\u0005\u0006\u0000\u0000fg\u0003\u0004\u0002\u0000g\u0015"+
-		"\u0001\u0000\u0000\u0000hi\u0007\u0000\u0000\u0000i\u0017\u0001\u0000"+
-		"\u0000\u0000jk\u0007\u0001\u0000\u0000k\u0019\u0001\u0000\u0000\u0000"+
-		"\u0006 -5>[`";
+		"\f\u0007\f\u0002\r\u0007\r\u0001\u0000\u0004\u0000\u001e\b\u0000\u000b"+
+		"\u0000\f\u0000\u001f\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001"+
+		"\u0001\u0001\u0001\u0001\u0002\u0001\u0002\u0001\u0002\u0005\u0002+\b"+
+		"\u0002\n\u0002\f\u0002.\t\u0002\u0001\u0003\u0001\u0003\u0001\u0003\u0005"+
+		"\u00033\b\u0003\n\u0003\f\u00036\t\u0003\u0001\u0004\u0001\u0004\u0001"+
+		"\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0003\u0004>\b\u0004\u0001"+
+		"\u0005\u0001\u0005\u0001\u0005\u0001\u0005\u0001\u0005\u0001\u0005\u0001"+
+		"\u0005\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0006\u0001"+
+		"\u0006\u0001\u0006\u0001\u0006\u0001\u0007\u0001\u0007\u0001\u0007\u0001"+
+		"\u0007\u0001\u0007\u0001\b\u0001\b\u0001\b\u0001\b\u0001\b\u0001\b\u0001"+
+		"\b\u0003\b[\b\b\u0001\b\u0001\b\u0001\b\u0003\b`\b\b\u0001\t\u0001\t\u0001"+
+		"\t\u0001\n\u0001\n\u0001\n\u0001\u000b\u0001\u000b\u0001\f\u0001\f\u0001"+
+		"\r\u0001\r\u0001\r\u0000\u0000\u000e\u0000\u0002\u0004\u0006\b\n\f\u000e"+
+		"\u0010\u0012\u0014\u0016\u0018\u001a\u0000\u0003\u0001\u0000\u000e\u0010"+
+		"\u0001\u0000\f\r\u0002\u0000\b\b\n\u000bi\u0000\u001d\u0001\u0000\u0000"+
+		"\u0000\u0002#\u0001\u0000\u0000\u0000\u0004\'\u0001\u0000\u0000\u0000"+
+		"\u0006/\u0001\u0000\u0000\u0000\b=\u0001\u0000\u0000\u0000\n?\u0001\u0000"+
+		"\u0000\u0000\fF\u0001\u0000\u0000\u0000\u000eN\u0001\u0000\u0000\u0000"+
+		"\u0010S\u0001\u0000\u0000\u0000\u0012a\u0001\u0000\u0000\u0000\u0014d"+
+		"\u0001\u0000\u0000\u0000\u0016g\u0001\u0000\u0000\u0000\u0018i\u0001\u0000"+
+		"\u0000\u0000\u001ak\u0001\u0000\u0000\u0000\u001c\u001e\u0003\u0002\u0001"+
+		"\u0000\u001d\u001c\u0001\u0000\u0000\u0000\u001e\u001f\u0001\u0000\u0000"+
+		"\u0000\u001f\u001d\u0001\u0000\u0000\u0000\u001f \u0001\u0000\u0000\u0000"+
+		" !\u0001\u0000\u0000\u0000!\"\u0005\u0000\u0000\u0001\"\u0001\u0001\u0000"+
+		"\u0000\u0000#$\u0003\u0004\u0002\u0000$%\u0005\u0016\u0000\u0000%&\u0003"+
+		"\u0006\u0003\u0000&\u0003\u0001\u0000\u0000\u0000\',\u0005\u0018\u0000"+
+		"\u0000()\u0005\u0016\u0000\u0000)+\u0005\u0018\u0000\u0000*(\u0001\u0000"+
+		"\u0000\u0000+.\u0001\u0000\u0000\u0000,*\u0001\u0000\u0000\u0000,-\u0001"+
+		"\u0000\u0000\u0000-\u0005\u0001\u0000\u0000\u0000.,\u0001\u0000\u0000"+
+		"\u0000/4\u0003\b\u0004\u000001\u0005\u0017\u0000\u000013\u0003\b\u0004"+
+		"\u000020\u0001\u0000\u0000\u000036\u0001\u0000\u0000\u000042\u0001\u0000"+
+		"\u0000\u000045\u0001\u0000\u0000\u00005\u0007\u0001\u0000\u0000\u0000"+
+		"64\u0001\u0000\u0000\u00007>\u0003\n\u0005\u00008>\u0003\f\u0006\u0000"+
+		"9>\u0003\u0012\t\u0000:>\u0003\u0014\n\u0000;>\u0003\u0010\b\u0000<>\u0003"+
+		"\u000e\u0007\u0000=7\u0001\u0000\u0000\u0000=8\u0001\u0000\u0000\u0000"+
+		"=9\u0001\u0000\u0000\u0000=:\u0001\u0000\u0000\u0000=;\u0001\u0000\u0000"+
+		"\u0000=<\u0001\u0000\u0000\u0000>\t\u0001\u0000\u0000\u0000?@\u0005\u0002"+
+		"\u0000\u0000@A\u0005\u0007\u0000\u0000AB\u0005\u0019\u0000\u0000BC\u0005"+
+		"\u0013\u0000\u0000CD\u0005\u0007\u0000\u0000DE\u0005\u0019\u0000\u0000"+
+		"E\u000b\u0001\u0000\u0000\u0000FG\u0005\u0003\u0000\u0000GH\u0005\u0018"+
+		"\u0000\u0000HI\u0003\u001a\r\u0000IJ\u0005\u0018\u0000\u0000JK\u0005\u0012"+
+		"\u0000\u0000KL\u0005\u0007\u0000\u0000LM\u0005\u0019\u0000\u0000M\r\u0001"+
+		"\u0000\u0000\u0000NO\u0005\u0011\u0000\u0000OP\u0003\u0018\f\u0000PQ\u0005"+
+		"\u0014\u0000\u0000QR\u0003\u0010\b\u0000R\u000f\u0001\u0000\u0000\u0000"+
+		"ST\u0005\u0004\u0000\u0000TU\u0005\u0018\u0000\u0000UV\u0005\t\u0000\u0000"+
+		"VZ\u0005\u0018\u0000\u0000WX\u0005\u0012\u0000\u0000XY\u0005\u0007\u0000"+
+		"\u0000Y[\u0005\u0019\u0000\u0000ZW\u0001\u0000\u0000\u0000Z[\u0001\u0000"+
+		"\u0000\u0000[_\u0001\u0000\u0000\u0000\\]\u0005\u0011\u0000\u0000]^\u0005"+
+		"\n\u0000\u0000^`\u0005\u0018\u0000\u0000_\\\u0001\u0000\u0000\u0000_`"+
+		"\u0001\u0000\u0000\u0000`\u0011\u0001\u0000\u0000\u0000ab\u0005\u0005"+
+		"\u0000\u0000bc\u0003\u0016\u000b\u0000c\u0013\u0001\u0000\u0000\u0000"+
+		"de\u0005\u0006\u0000\u0000ef\u0003\u0004\u0002\u0000f\u0015\u0001\u0000"+
+		"\u0000\u0000gh\u0007\u0000\u0000\u0000h\u0017\u0001\u0000\u0000\u0000"+
+		"ij\u0007\u0001\u0000\u0000j\u0019\u0001\u0000\u0000\u0000kl\u0007\u0002"+
+		"\u0000\u0000l\u001b\u0001\u0000\u0000\u0000\u0006\u001f,4=Z_";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

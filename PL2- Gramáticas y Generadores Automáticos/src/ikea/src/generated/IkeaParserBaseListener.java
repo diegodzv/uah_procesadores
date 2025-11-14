@@ -148,6 +148,18 @@ public class IkeaParserBaseListener implements IkeaParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterOrientacion(IkeaParser.OrientacionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOrientacion(IkeaParser.OrientacionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterHerramienta(IkeaParser.HerramientaContext ctx) { }
 	/**
 	 * {@inheritDoc}
